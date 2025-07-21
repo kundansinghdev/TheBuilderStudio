@@ -65,12 +65,12 @@ export default function MVPList() {
             start: 'top 80%',
             end: 'bottom 20%',
             toggleActions: 'play none none reverse',
-        }
+        },
       });
 
       tl.fromTo(titleRef.current,
         { opacity: 0, y: 60, scale: 0.85, rotationX: -10 },
-        { opacity: 1, y: 0, scale: 1, rotationX: 0, duration: 1.2, ease: 'power3.out' }
+        { opacity: 1, y: 0, scale: 1, rotationX: 0, duration: 1.2, ease: 'power3.out' },
       );
 
       if (cardsRef.current) {
@@ -135,7 +135,7 @@ export default function MVPList() {
     <section ref={sectionRef} id="mvp-list" className="py-24 relative overflow-hidden">
       {/* Advanced Background Elements */}
       <div className="absolute inset-0 grid-pattern opacity-5" />
-      
+
       {/* Animated gradient orbs */}
       <div className="absolute top-10 left-10 glow-orb floating-element">
         <div className="w-32 h-32 bg-gradient-to-br from-blue-500/20 via-purple-500/15 to-cyan-500/20 rounded-full blur-3xl animate-pulse" />
@@ -156,7 +156,7 @@ export default function MVPList() {
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`
+              animationDelay: `${Math.random() * 3}s`,
             }}
           />
         ))}
@@ -186,7 +186,7 @@ export default function MVPList() {
               {/* Header with icon, platform, and category */}
               <div className="h-56 bg-gradient-to-br from-cyan-600 via-purple-600 to-blue-600 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20" />
-                
+
                 <div className="relative text-center text-white z-10">
                   <div className="text-7xl mb-4 group-hover:scale-105 transition-transform duration-200">
                     {mvp.icon}
@@ -260,11 +260,11 @@ export default function MVPList() {
       {previewUrl && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop */}
-          <div 
+          <div
             className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             onClick={closePreview}
           />
-          
+
           {/* Modal Content */}
           <div className="relative w-full max-w-6xl h-[80vh] bg-white rounded-2xl overflow-hidden shadow-2xl">
             {/* Header */}
@@ -290,13 +290,13 @@ export default function MVPList() {
                 </button>
               </div>
             </div>
-            
+
             {/* Website Preview */}
             <div className="h-full relative">
               {isIframeLoading && (
                 <div className="absolute inset-0 bg-gray-100 flex items-center justify-center z-10">
                   <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4" />
                     <p className="text-gray-600">Loading {previewTitle}...</p>
                   </div>
                 </div>

@@ -2,8 +2,8 @@
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
 import { Lightbulb, CheckCircle2, ClipboardList, Rocket } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,12 +64,12 @@ export default function ProcessTimeline() {
             start: 'top 80%',
             end: 'bottom 20%',
             toggleActions: 'play none none reverse',
-        }
+        },
       });
 
       tl.fromTo(titleRef.current,
         { opacity: 0, y: 70, scale: 0.8, rotationX: -12 },
-        { opacity: 1, y: 0, scale: 1, rotationX: 0, duration: 1.4, ease: 'power3.out' }
+        { opacity: 1, y: 0, scale: 1, rotationX: 0, duration: 1.4, ease: 'power3.out' },
       );
 
       if (stepsRef.current) {
@@ -134,7 +134,7 @@ export default function ProcessTimeline() {
     <section ref={sectionRef} id="process" className="py-24 relative overflow-hidden">
       {/* Advanced Background Elements */}
       <div className="absolute inset-0 grid-pattern opacity-5" />
-      
+
       {/* Animated gradient orbs */}
       <div className="absolute top-10 left-10 glow-orb floating-element">
         <div className="w-28 h-28 bg-gradient-to-br from-blue-500/20 via-purple-500/15 to-cyan-500/20 rounded-full blur-3xl animate-pulse" />
@@ -155,7 +155,7 @@ export default function ProcessTimeline() {
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`
+              animationDelay: `${Math.random() * 3}s`,
             }}
           />
         ))}

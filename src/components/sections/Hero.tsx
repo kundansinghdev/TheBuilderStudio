@@ -15,19 +15,19 @@ export default function Hero() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Smooth initial animation sequence
-      const tl = gsap.timeline({ ease: "power2.out" });
+      const tl = gsap.timeline({ ease: 'power2.out' });
       tl.fromTo(headingRef.current,
         { opacity: 0, y: 80, scale: 0.85, rotationX: -15 },
-        { opacity: 1, y: 0, scale: 1, rotationX: 0, duration: 1.2, ease: "power3.out" },
+        { opacity: 1, y: 0, scale: 1, rotationX: 0, duration: 1.2, ease: 'power3.out' },
       )
       .fromTo(subheadingRef.current,
         { opacity: 0, y: 40, scale: 0.95 },
-        { opacity: 1, y: 0, scale: 1, duration: 1, ease: "power2.out" },
+        { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power2.out' },
         '-=0.8',
       )
       .fromTo(ctaRef.current,
         { opacity: 0, y: 30, scale: 0.9, rotationY: -5 },
-        { opacity: 1, y: 0, scale: 1, rotationY: 0, duration: 0.8, ease: "back.out(1.4)" },
+        { opacity: 1, y: 0, scale: 1, rotationY: 0, duration: 0.8, ease: 'back.out(1.4)' },
         '-=0.6',
       );
 
@@ -107,7 +107,7 @@ export default function Hero() {
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`
+              animationDelay: `${Math.random() * 3}s`,
             }}
           />
         ))}
@@ -134,18 +134,18 @@ export default function Hero() {
                   Studio
                 </span>
               </h1>
-              <div className="w-20 sm:w-32 md:w-40 h-1 sm:h-1.5 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mx-auto mt-4 sm:mt-6 rounded-full relative z-10"></div>
+              <div className="w-20 sm:w-32 md:w-40 h-1 sm:h-1.5 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mx-auto mt-4 sm:mt-6 rounded-full relative z-10" />
             </div>
-            
+
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-extrabold text-white mb-4 sm:mb-6 leading-tight max-w-4xl sm:max-w-5xl lg:max-w-6xl animate-fade-in-up px-4 sm:px-0">
               <span className="whitespace-normal sm:whitespace-nowrap">Turn your idea into a ready</span><br />
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">to launch MVP in 4-weeks</span>
             </h2>
-            
+
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-3xl sm:max-w-4xl leading-relaxed animate-fade-in-up px-4 sm:px-0">
               Trusted by <span className="text-blue-400 font-bold">3+ startups</span> to build & launch software products with <span className="text-purple-400 font-bold">95% success rate</span>.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-8 sm:mb-12 animate-fade-in-up px-4 sm:px-0 w-full sm:w-auto">
               <a
                 href="#readytoLaunch"
@@ -153,9 +153,9 @@ export default function Hero() {
                   e.preventDefault();
                   const element = document.getElementById('readytoLaunch');
                   if (element) {
-                    element.scrollIntoView({ 
+                    element.scrollIntoView({
                       behavior: 'smooth',
-                      block: 'start'
+                      block: 'start',
                     });
                   }
                 }}
@@ -180,15 +180,15 @@ export default function Hero() {
                 <span className="whitespace-nowrap">Start WhatsApp Chat</span>
               </a>
             </div>
-            
+
             {/* Video section with consistent background */}
             <div className="w-full max-w-5xl sm:max-w-6xl lg:max-w-7xl aspect-video rounded-2xl sm:rounded-3xl lg:rounded-[2.5rem] overflow-hidden border border-white/10 mx-auto relative group animate-fade-in-up glass-effect shadow-[0_10px_30px_rgba(0,0,0,0.3)] px-4 sm:px-0">
               {/* Background lighting effects */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-cyan-500/20 z-0"></div>
-              <div className="absolute top-0 left-1/4 w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-blue-400/30 rounded-full blur-2xl sm:blur-3xl animate-pulse"></div>
-              <div className="absolute bottom-0 right-1/4 w-20 h-20 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-purple-400/30 rounded-full blur-2xl sm:blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute top-1/2 left-0 w-12 h-12 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-cyan-400/30 rounded-full blur-xl sm:blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-              
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-cyan-500/20 z-0" />
+              <div className="absolute top-0 left-1/4 w-16 h-16 sm:w-24 sm:h-24 lg:w-32 lg:h-32 bg-blue-400/30 rounded-full blur-2xl sm:blur-3xl animate-pulse" />
+              <div className="absolute bottom-0 right-1/4 w-20 h-20 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-purple-400/30 rounded-full blur-2xl sm:blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-1/2 left-0 w-12 h-12 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-cyan-400/30 rounded-full blur-xl sm:blur-2xl animate-pulse" style={{ animationDelay: '2s' }} />
+
               <video
                 id="hero-video"
                 className="w-full h-full relative z-10 object-cover"
@@ -201,9 +201,9 @@ export default function Hero() {
                 <source src="/The_Builder_Studio_Coming_Soon.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-              
+
               {/* Overlay gradient for better text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-5 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-5 pointer-events-none" />
             </div>
           </div>
 

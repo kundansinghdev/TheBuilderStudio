@@ -116,7 +116,7 @@ export default function MVPList() {
               {/* Header with icon, platform, and category */}
               <div className="h-56 bg-gradient-to-br from-cyan-600 via-purple-600 to-blue-600 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-black/20" />
-                
+
                 <div className="relative text-center text-white z-10">
                   <div className="text-7xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     {mvp.icon}
@@ -190,11 +190,11 @@ export default function MVPList() {
       {previewUrl && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           {/* Backdrop */}
-          <div 
+          <div
             className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             onClick={closePreview}
           />
-          
+
           {/* Modal Content */}
           <div className="relative w-full max-w-6xl h-[80vh] bg-white rounded-2xl overflow-hidden shadow-2xl">
             {/* Header */}
@@ -220,13 +220,13 @@ export default function MVPList() {
                 </button>
               </div>
             </div>
-            
+
             {/* Website Preview */}
             <div className="h-full relative">
               {isIframeLoading && (
                 <div className="absolute inset-0 bg-gray-100 flex items-center justify-center z-10">
                   <div className="text-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4" />
                     <p className="text-gray-600">Loading {previewTitle}...</p>
                   </div>
                 </div>

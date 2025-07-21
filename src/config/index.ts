@@ -2,10 +2,12 @@ import { AppConfig, Environment } from '@/types';
 
 // Environment detection
 const getEnvironment = (): Environment => {
+  const appEnv = process.env.APP_ENV;
+  if (appEnv === 'staging') return 'staging';
+
   const env = process.env.NODE_ENV;
   if (env === 'production') return 'production';
   if (env === 'test') return 'test';
-  if (env === 'staging') return 'staging';
   return 'development';
 };
 

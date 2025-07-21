@@ -91,18 +91,18 @@ export default function Hero() {
                   Studio
                 </span>
               </h1>
-              <div className="w-40 h-1.5 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mx-auto mt-6 rounded-full relative z-10"></div>
+              <div className="w-40 h-1.5 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mx-auto mt-6 rounded-full relative z-10" />
             </div>
-            
+
             <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight max-w-6xl animate-fade-in-up">
               <span className="whitespace-nowrap">Turn your idea into a ready</span><br />
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">to launch MVP in 4-weeks</span>
             </h2>
-            
+
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl leading-relaxed animate-fade-in-up">
               Trusted by <span className="text-blue-400 font-bold">10+ startups</span> to build & launch software products with <span className="text-purple-400 font-bold">95% success rate</span>.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12 animate-fade-in-up">
               <a
                 href="#contact"
@@ -121,7 +121,7 @@ export default function Hero() {
                 Start WhatsApp Chat
               </a>
             </div>
-            
+
             {/* Video section with consistent background */}
             <div className="w-full max-w-7xl aspect-video rounded-[2.5rem] overflow-hidden border border-white/10 mx-auto relative group animate-fade-in-up glass-effect">
               <iframe
@@ -132,7 +132,7 @@ export default function Hero() {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-              ></iframe>
+               />
             </div>
           </div>
 

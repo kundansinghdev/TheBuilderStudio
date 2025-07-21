@@ -2,38 +2,37 @@
 
 import { useState, useEffect } from 'react';
 
+import ReadytoLaunch from '../components/ReadytoLaunch';
 import Hero from '../src/components/sections/Hero';
-import LoadingScreen from '../src/components/ui/LoadingScreen';
 import MVPList from '../src/components/sections/MVPList';
 import ProcessTimeline from '../src/components/sections/ProcessTimeline';
-import HeroLaunchSection from '../components/ReadytoLaunch';
+import LoadingScreen from '../src/components/ui/LoadingScreen';
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
-  const handleLoadingComplete = () => {
-    setIsLoading(false);
-  };
-
-  // Auto-complete loading after 3 seconds as fallback
   useEffect(() => {
     const fallbackTimer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+      setLoading(false);
+    }, 5000);
 
     return () => clearTimeout(fallbackTimer);
   }, []);
 
-  return (
-    <>
-      {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
+  const handleLoadingComplete = () => {
+    setLoading(false);
+  };
 
-      <main className={`min-h-screen transition-opacity duration-500 platform-bg ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
-        <Hero />
-        <ProcessTimeline />
-        <MVPList />
-        <HeroLaunchSection />
-      </main>
-    </>
+  if (loading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} />;
+  }
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <Hero />
+      <ProcessTimeline />
+      <MVPList />
+      <ReadytoLaunch />
+    </main>
   );
 }
