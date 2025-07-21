@@ -1,0 +1,80 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "ES6"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/types/*": ["./src/types/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/constants/*": ["./src/constants/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/store/*": ["./src/store/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/api/*": ["./src/api/*"],
+      "@/config/*": ["./src/config/*"],
+      "@/features/*": ["./src/features/*"],
+      "@/pages/*": ["./src/pages/*"],
+      "@/layouts/*": ["./src/layouts/*"],
+      "@/providers/*": ["./src/providers/*"],
+      "@/middleware/*": ["./src/middleware/*"],
+      "@/validations/*": ["./src/validations/*"],
+      "@/schemas/*": ["./src/schemas/*"],
+      "@/prisma/*": ["./prisma/*"],
+      "@/tests/*": ["./tests/*"],
+      "@/stories/*": ["./src/stories/*"]
+    },
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/**/*",
+    "tests/**/*",
+    "stories/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out",
+    "dist",
+    "build",
+    "coverage",
+    "*.config.js",
+    "*.config.ts"
+  ]
+} 
