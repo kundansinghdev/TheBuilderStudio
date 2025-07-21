@@ -12,6 +12,8 @@ interface Particle {
   color: string
 }
 
+const PARTICLE_COLORS: readonly string[] = ['#3b82f6', '#8b5cf6', '#10b981', '#6366f1'];
+
 export default function ParticleSystem() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -43,7 +45,7 @@ export default function ParticleSystem() {
         vy: (Math.random() - 0.5) * 0.3, // Reduced speed
         size: Math.random() * 1.5 + 0.5, // Smaller particles
         opacity: Math.random() * 0.3 + 0.1, // Lower opacity
-        color: ['#3b82f6', '#8b5cf6', '#10b981', '#6366f1'][Math.floor(Math.random() * 4)],
+        color: PARTICLE_COLORS[Math.floor(Math.random() * PARTICLE_COLORS.length)] as string,
       });
     }
 

@@ -11,7 +11,7 @@ export function cn(...inputs: ClassValue[]) {
 /**
  * Debounce function for performance optimization
  */
-export function debounce<T extends(...args: any[]) => any>(
+export function debounce<T extends(...args: unknown[]) => unknown>(
   func: T,
   wait: number,
 ): (...args: Parameters<T>) => void {
@@ -25,7 +25,7 @@ export function debounce<T extends(...args: any[]) => any>(
 /**
  * Throttle function for performance optimization
  */
-export function throttle<T extends(...args: any[]) => any>(
+export function throttle<T extends(...args: unknown[]) => unknown>(
   func: T,
   limit: number,
 ): (...args: Parameters<T>) => void {
@@ -189,7 +189,7 @@ export async function retry<T>(
 /**
  * Memoize function results
  */
-export function memoize<T extends(...args: any[]) => any>(
+export function memoize<T extends(...args: unknown[]) => unknown>(
   fn: T,
   getKey?: (...args: Parameters<T>) => string,
 ): T {
@@ -197,10 +197,11 @@ export function memoize<T extends(...args: any[]) => any>(
 
   return ((...args: Parameters<T>) => {
     const key = getKey ? getKey(...args) : JSON.stringify(args);
-    if (cache.has(key)) {
-      return cache.get(key);
+    const cached = cache.get(key);
+    if (cached !== undefined) {
+      return cached;
     }
-    const result = fn(...args);
+    const result = fn(...args) as ReturnType<T>;
     cache.set(key, result);
     return result;
   }) as T;
@@ -209,34 +210,51 @@ export function memoize<T extends(...args: any[]) => any>(
 /**
  * Check if value is empty (null, undefined, empty string, empty array, empty object)
  */
-export function isEmpty(value: any): boolean {
+export function isEmpty(value: unknown): boolean {
   if (value == null) return true;
   if (typeof value === 'string') return value.trim().length === 0;
   if (Array.isArray(value)) return value.length === 0;
-  if (typeof value === 'object') return Object.keys(value).length === 0;
+  if (typeof value === 'object') return Object.keys(value as object).length === 0;
   return false;
 }
 
 /**
  * Get nested object property safely
  */
-export function getNestedValue(obj: any, path: string, defaultValue?: any): any {
-  return path.split('.').reduce((current, key) => {
-    return current && current[key] !== undefined ? current[key] : defaultValue;
-  }, obj);
+export function getNestedValue<T>(
+  obj: Record<string, unknown>,
+  path: string,
+  defaultValue: T
+): T {
+  let current: unknown = obj;
+  const keys = path.split('.');
+
+  for (const key of keys) {
+    if (current && typeof current === 'object' && key in current) {
+      current = (current as Record<string, unknown>)[key];
+    } else {
+      return defaultValue;
+    }
+  }
+
+  return (current ?? defaultValue) as T;
 }
 
 /**
  * Set nested object property safely
  */
-export function setNestedValue(obj: any, path: string, value: any): void {
+export function setNestedValue(
+  obj: Record<string, unknown>,
+  path: string,
+  value: unknown
+): void {
   const keys = path.split('.');
   const lastKey = keys.pop()!;
-  const target = keys.reduce((current, key) => {
+  const target = keys.reduce((current: Record<string, unknown>, key: string) => {
     if (!(key in current)) {
       current[key] = {};
     }
-    return current[key];
+    return current[key] as Record<string, unknown>;
   }, obj);
   target[lastKey] = value;
 }

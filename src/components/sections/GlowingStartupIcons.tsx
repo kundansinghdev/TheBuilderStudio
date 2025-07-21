@@ -2,6 +2,14 @@
 
 import React, { useEffect, useRef } from 'react';
 
+interface RGBColor {
+  r: number;
+  g: number;
+  b: number;
+}
+
+type DrawColor = string | CanvasGradient | CanvasPattern | RGBColor;
+
 export default function GlowingStartupIcons() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -98,7 +106,7 @@ export default function GlowingStartupIcons() {
     };
 
     // Draw icon functions
-    const drawRocket = (x: number, y: number, size: number, color: any) => {
+    const drawRocket = (x: number, y: number, size: number, color: RGBColor) => {
       ctx.save();
       ctx.translate(x, y);
       ctx.scale(size / 24, size / 24);
@@ -129,7 +137,7 @@ export default function GlowingStartupIcons() {
       ctx.restore();
     };
 
-    const drawLightbulb = (x: number, y: number, size: number, color: any) => {
+    const drawLightbulb = (x: number, y: number, size: number, color: RGBColor) => {
       ctx.save();
       ctx.translate(x, y);
       ctx.scale(size / 24, size / 24);
@@ -154,7 +162,7 @@ export default function GlowingStartupIcons() {
       ctx.restore();
     };
 
-    const drawZap = (x: number, y: number, size: number, color: any) => {
+    const drawZap = (x: number, y: number, size: number, color: RGBColor) => {
       ctx.save();
       ctx.translate(x, y);
       ctx.scale(size / 24, size / 24);
@@ -173,7 +181,7 @@ export default function GlowingStartupIcons() {
       ctx.restore();
     };
 
-    const drawTarget = (x: number, y: number, size: number, color: any) => {
+    const drawTarget = (x: number, y: number, size: number, color: RGBColor) => {
       ctx.save();
       ctx.translate(x, y);
       ctx.scale(size / 24, size / 24);
@@ -199,7 +207,7 @@ export default function GlowingStartupIcons() {
       ctx.restore();
     };
 
-    const drawTrending = (x: number, y: number, size: number, color: any) => {
+    const drawTrending = (x: number, y: number, size: number, color: RGBColor) => {
       ctx.save();
       ctx.translate(x, y);
       ctx.scale(size / 24, size / 24);
@@ -229,7 +237,7 @@ export default function GlowingStartupIcons() {
       ctx.restore();
     };
 
-    const drawUsers = (x: number, y: number, size: number, color: any) => {
+    const drawUsers = (x: number, y: number, size: number, color: RGBColor) => {
       ctx.save();
       ctx.translate(x, y);
       ctx.scale(size / 24, size / 24);
@@ -257,7 +265,7 @@ export default function GlowingStartupIcons() {
       ctx.restore();
     };
 
-    const drawChart = (x: number, y: number, size: number, color: any) => {
+    const drawChart = (x: number, y: number, size: number, color: RGBColor) => {
       ctx.save();
       ctx.translate(x, y);
       ctx.scale(size / 24, size / 24);
@@ -275,7 +283,7 @@ export default function GlowingStartupIcons() {
       ctx.restore();
     };
 
-    const drawStar = (x: number, y: number, size: number, color: any) => {
+    const drawStar = (x: number, y: number, size: number, color: RGBColor) => {
       ctx.save();
       ctx.translate(x, y);
       ctx.scale(size / 24, size / 24);
