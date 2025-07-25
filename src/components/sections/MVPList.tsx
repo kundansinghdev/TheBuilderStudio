@@ -60,11 +60,11 @@ export default function MVPList() {
     const ctx = gsap.context(() => {
       // Advanced entrance animations
       const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse',
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse',
         },
       });
 
@@ -134,6 +134,13 @@ export default function MVPList() {
   return (
     <section ref={sectionRef} id="mvp-list" className="py-24 relative overflow-hidden">
       {/* Advanced Background Elements */}
+      <div className="flex justify-center py-4">
+        <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 glass-effect rounded-full sm:mb-6">
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse" />
+          <span className="text-green-400 text-sm font-medium tracking-wide">WE BUILD. WE SHIP. WE DELIVER</span>
+        </div>
+      </div>
+
       <div className="absolute inset-0 grid-pattern opacity-5" />
 
       {/* Animated gradient orbs */}
@@ -170,10 +177,10 @@ export default function MVPList() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={titleRef} className="text-center mb-12">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-            MVPs We've Built
+     MVPs That Shaped the Future
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            From concept to launch in record time. Here's a showcase of the innovative products we've helped bring to life.
+    From bold ideas to real-world impact — explore the groundbreaking products we've brought to life with speed, precision, and purpose.
           </p>
         </div>
 
