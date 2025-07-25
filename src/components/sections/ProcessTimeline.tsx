@@ -11,7 +11,7 @@ const steps = [
   {
     number: '01',
     title: 'Idea Validation',
-    why: 'Every breakthrough starts with a spark.',
+    why: 'Validate the vision before writing code.',
     text: 'Clarify your vision and set a strong foundation.',
     icon: Lightbulb,
     color: 'from-blue-500 via-blue-400 to-cyan-400',
@@ -21,7 +21,7 @@ const steps = [
   {
     number: '02',
     title: 'Planning',
-    why: 'A clear roadmap turns vision into velocity.',
+    why: 'Turn insight into a tactical roadmap.',
     text: 'Map out the fastest path to a launch-ready MVP.',
     icon: ClipboardList,
     color: 'from-emerald-500 via-teal-400 to-emerald-400',
@@ -31,7 +31,7 @@ const steps = [
   {
     number: '03',
     title: 'Execution',
-    why: 'Momentum is everything. We ship, you launch.',
+    why: 'Move fast. Build what matters most.',
     text: 'Build, launch, and iterate for real-world results.',
     icon: Rocket,
     color: 'from-pink-500 via-pink-400 to-fuchsia-400',
@@ -41,7 +41,7 @@ const steps = [
   {
     number: '04',
     title: 'Launch',
-    why: 'You only launch once. Make it count.',
+    why: 'Launch loud. Make it matter.',
     text: 'Release your MVP to the world with confidence and clarity.',
     icon: CheckCircle2,
     color: 'from-yellow-500 via-orange-400 to-red-400',
@@ -49,6 +49,8 @@ const steps = [
     border: 'border-yellow-500/40',
   },
 ];
+
+
 
 export default function ProcessTimeline() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -98,69 +100,62 @@ export default function ProcessTimeline() {
     return () => ctx.revert();
   }, []);
 
-  return (
-    <section ref={sectionRef} id="process" className="py-16 mb-24 relative overflow-visible">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div ref={titleRef} className="text-center mb-8">
-          <h2 className="text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-lg mb-4 tracking-tight">
-            Our Process of Building MVP
-          </h2>
-          <p className="text-2xl md:text-3xl text-gray-100 font-semibold mb-2">
-            A journey from spark to launch, crafted for founders.
-          </p>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-6">
-            We don't just build MVPs. We build momentum, clarity, and confidence—so you can launch with certainty.
-          </p>
-        </div>
-
-        <div
-          ref={stepsRef}
-          className="flex flex-col lg:flex-row items-stretch justify-between gap-8 lg:gap-0 relative"
-        >
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <div
-                key={index}
-                className="flex-1 flex flex-col items-center group relative z-10 min-w-[160px] max-w-[240px]"
-              >
-                {/* Connector line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 left-full w-20 h-1 -translate-y-1/2 z-0">
-                    <div className="w-full h-full bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 rounded-full animate-gradient-move shadow-lg opacity-80" />
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-gradient-to-br from-blue-400 via-purple-400 to-emerald-400 rounded-full shadow-xl animate-pulse-fast border-2 border-white/10" />
-                  </div>
-                )}
-
-                {/* Step Card */}
-                <div
-                  className={`relative flex flex-col items-center text-center glass-effect rounded-xl shadow-xl border px-4 py-7 mb-1 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-blue-500/40 animate-fadeInUp cursor-pointer hover:ring-2 hover:ring-blue-400/30 ${step.border}`}
-                >
-                  <div
-                    className={`w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br ${step.color} shadow-md mb-2 animate-pulse-fast group-hover:scale-110 transition-transform duration-300`}
-                  >
-                    <Icon className="w-6 h-6 text-white drop-shadow-lg animate-icon-bounce group-hover:animate-icon-spin" />
-                  </div>
-                  <div className="mb-1">
-                    <span
-                      className={`inline-block px-3 py-0.5 rounded-full text-white font-extrabold text-sm shadow-md tracking-widest font-mono ${step.badge}`}
-                    >
-                      {step.number}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-0.5 tracking-tight font-sans">
-                    {step.title}
-                  </h3>
-                  <p className="text-blue-100 text-sm font-semibold mb-0.5 font-sans">{step.why}</p>
-                  <p className="text-gray-100 leading-relaxed text-xs max-w-[140px] mx-auto font-sans">
-                    {step.text}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+ return (
+  <section ref={sectionRef} id="process" className="py-16 mb-24 relative overflow-visible">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div ref={titleRef} className="text-center mb-8">
+        <h2 className="text-6xl md:text-7xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent drop-shadow-lg mb-4 tracking-tight">
+          Our Process of Building MVP
+        </h2>
+        <p className="text-2xl md:text-3xl text-gray-100 font-semibold mb-2">
+          A journey from spark to launch, crafted for founders.
+        </p>
+        <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-6">
+          We don't just build MVPs. We build momentum, clarity, and confidence—so you can launch with certainty.
+        </p>
       </div>
-    </section>
-  );
+
+      <div
+        ref={stepsRef}
+        className="w-full flex flex-wrap justify-start gap-6 pl-[10%] pr-[10%]"
+      >
+        {steps.map((step, index) => {
+          const Icon = step.icon;
+          return (
+            <div
+              key={index}
+              className="w-[240px] flex flex-col items-center group relative z-10"
+            >
+              {/* Step Card */}
+              <div
+                className={`relative flex flex-col items-center text-center glass-effect rounded-xl shadow-xl border px-4 py-7 mb-1 transition-transform duration-300 group-hover:scale-105 group-hover:shadow-blue-500/40 animate-fadeInUp cursor-pointer hover:ring-2 hover:ring-blue-400/30 ${step.border}`}
+              >
+                <div
+                  className={`w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br ${step.color} shadow-md mb-2 animate-pulse-fast group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <Icon className="w-6 h-6 text-white drop-shadow-lg animate-icon-bounce group-hover:animate-icon-spin" />
+                </div>
+                <div className="mb-1">
+                  <span
+                    className={`inline-block px-3 py-0.5 rounded-full text-white font-extrabold text-sm shadow-md tracking-widest font-mono ${step.badge}`}
+                  >
+                    {step.number}
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-0.5 tracking-tight font-sans">
+                  {step.title}
+                </h3>
+                <p className="text-blue-100 text-sm font-semibold mb-0.5 font-sans">{step.why}</p>
+                <p className="text-gray-100 leading-relaxed text-xs max-w-[140px] mx-auto font-sans">
+                  {step.text}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+);
+
 }
