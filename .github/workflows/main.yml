@@ -22,4 +22,4 @@ jobs:
 
       - name: Deploy static site to S3 bucket
         run: |
-          aws s3 sync . s3://the-builder-studio--delete
+          aws s3 sync . s3://the-builder-studio --delete
